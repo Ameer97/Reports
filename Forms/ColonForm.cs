@@ -49,11 +49,11 @@ namespace Reports.Forms
             TClinicalData.Text = Interaction.InputBox("Input Clinical Data");
         }
 
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        private void DataGridView1_DoubleClick(object sender, EventArgs e)
         {
-            var Row = dataGridView1.SelectedCells[0].RowIndex;
-            var Id = dataGridView1.Rows[Row].Cells[0].Value;
-            var Name = dataGridView1.Rows[Row].Cells[1].Value;
+            var Row = DataGridView1.SelectedCells[0].RowIndex;
+            var Id = DataGridView1.Rows[Row].Cells[0].Value;
+            var Name = DataGridView1.Rows[Row].Cells[1].Value;
             
             string myDir = "Colon";
             var path = myDir + "\\" + Id + "-" + Name + ".doc";
@@ -82,7 +82,7 @@ namespace Reports.Forms
             TEndoscopist.Text = Interaction.InputBox("Input Endoscopist");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             var Colon = new Colon
             {

@@ -67,11 +67,8 @@
             this.LAnalInspection = new System.Windows.Forms.Label();
             this.TAnalInspection = new System.Windows.Forms.TextBox();
             this.LPreparation = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.colonDataSet = new Reports.ColonDataSet();
-            this.colonsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.colonsTableAdapter = new Reports.ColonDataSetTableAdapters.ColonsTableAdapter();
+            this.Button1 = new System.Windows.Forms.Button();
+            this.DataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,9 +88,12 @@
             this.conclusionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.assistantDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endoscopistDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.colonDataSet)).BeginInit();
+            this.colonsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colonDataSet = new Reports.ColonDataSet();
+            this.colonsTableAdapter = new Reports.ColonDataSetTableAdapters.ColonsTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.colonsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colonDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -410,23 +410,23 @@
             this.LPreparation.TabIndex = 112;
             this.LPreparation.Text = "Preparation";
             // 
-            // button1
+            // Button1
             // 
-            this.button1.Location = new System.Drawing.Point(503, 133);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(65, 62);
-            this.button1.TabIndex = 111;
-            this.button1.Text = "Insert";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Button1.Location = new System.Drawing.Point(503, 133);
+            this.Button1.Name = "Button1";
+            this.Button1.Size = new System.Drawing.Size(65, 62);
+            this.Button1.TabIndex = 111;
+            this.Button1.Text = "Insert";
+            this.Button1.UseVisualStyleBackColor = true;
+            this.Button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // dataGridView1
+            // DataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DataGridView1.AllowUserToAddRows = false;
+            this.DataGridView1.AllowUserToDeleteRows = false;
+            this.DataGridView1.AutoGenerateColumns = false;
+            this.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
             this.ageDataGridViewTextBoxColumn,
@@ -446,27 +446,13 @@
             this.conclusionDataGridViewTextBoxColumn,
             this.assistantDataGridViewTextBoxColumn,
             this.endoscopistDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.colonsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(584, 63);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(637, 446);
-            this.dataGridView1.TabIndex = 151;
-            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
-            // 
-            // colonDataSet
-            // 
-            this.colonDataSet.DataSetName = "ColonDataSet";
-            this.colonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // colonsBindingSource
-            // 
-            this.colonsBindingSource.DataMember = "Colons";
-            this.colonsBindingSource.DataSource = this.colonDataSet;
-            // 
-            // colonsTableAdapter
-            // 
-            this.colonsTableAdapter.ClearBeforeFill = true;
+            this.DataGridView1.DataSource = this.colonsBindingSource;
+            this.DataGridView1.Location = new System.Drawing.Point(584, 63);
+            this.DataGridView1.Name = "DataGridView1";
+            this.DataGridView1.ReadOnly = true;
+            this.DataGridView1.Size = new System.Drawing.Size(637, 446);
+            this.DataGridView1.TabIndex = 151;
+            this.DataGridView1.DoubleClick += new System.EventHandler(this.DataGridView1_DoubleClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -601,12 +587,26 @@
             this.endoscopistDataGridViewTextBoxColumn.Name = "endoscopistDataGridViewTextBoxColumn";
             this.endoscopistDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // colonsBindingSource
+            // 
+            this.colonsBindingSource.DataMember = "Colons";
+            this.colonsBindingSource.DataSource = this.colonDataSet;
+            // 
+            // colonDataSet
+            // 
+            this.colonDataSet.DataSetName = "ColonDataSet";
+            this.colonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // colonsTableAdapter
+            // 
+            this.colonsTableAdapter.ClearBeforeFill = true;
+            // 
             // ColonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1233, 693);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DataGridView1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.CGender);
             this.Controls.Add(this.TEndoscopist);
@@ -645,13 +645,13 @@
             this.Controls.Add(this.LAnalInspection);
             this.Controls.Add(this.TAnalInspection);
             this.Controls.Add(this.LPreparation);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Button1);
             this.Name = "ColonForm";
             this.Text = "ColonForm";
             this.Load += new System.EventHandler(this.ColonForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.colonDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.colonsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colonDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -697,8 +697,8 @@
         private System.Windows.Forms.Label LAnalInspection;
         private System.Windows.Forms.TextBox TAnalInspection;
         private System.Windows.Forms.Label LPreparation;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button Button1;
+        private System.Windows.Forms.DataGridView DataGridView1;
         private ColonDataSet colonDataSet;
         private System.Windows.Forms.BindingSource colonsBindingSource;
         private ColonDataSetTableAdapters.ColonsTableAdapter colonsTableAdapter;
