@@ -33,5 +33,15 @@ namespace Reports.Properties {
                 return ((string)(this["AormsConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;Initial Catalog=Forms;Integrated Security=True")]
+        public string FormsConnectionString {
+            get {
+                return ((string)(this["FormsConnectionString"]));
+            }
+        }
     }
 }

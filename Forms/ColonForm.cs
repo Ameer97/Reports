@@ -39,60 +39,6 @@ namespace Reports.Forms
             };
             CGender.DataSource = GenderList;
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var Colon = new Colon
-            {
-                Name = TName.Text,
-                Age = TAge.Text,
-                Gender = CGender.Text,
-                FileNo = TFileNo.Text,
-                Date = dateTimePicker1.Value,
-                Premedication = TPremedication.Text,
-                Scope = CScope.Text,
-                ReferredDoctor = TReferredDoctor.Text,
-                ClinicalData = TClinicalData.Text,
-                Preparation = CPreparation.Text,
-                AnalInspection = TAnalInspection.Text,
-                PRExam = TPRExam.Text,
-                Ileum = TIleum.Text,
-                ColonDetails = TColon.Text,
-                Rectum = TRectum.Text,
-                Conclusion = TConclusion.Text,
-                Assistant = TAssistant.Text,
-                Endoscopist = TEndoscopist.Text,
-            };
-
-            _context.Colons.Add(Colon);
-            _context.SaveChanges();
-
-            
-            string myDir = "colon";
-            var path = myDir + "\\" + Colon.Id + "-" + Colon.Name + ".doc";
-
-            ReportDocument cr = new ReportDocument();
-            cr.Load("Colon.rpt");
-            cr.SetParameterValue("@Id", Colon.Id);
-            if (!System.IO.Directory.Exists(myDir))
-                System.IO.Directory.CreateDirectory(myDir);
-            cr.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.WordForWindows, path);
-            Process.Start(path);
-        }
-        
-        private void SpeedColon_Click(object sender, EventArgs e)
-        {
-            SpeedAll();
-            TAnalInspection.Text = Interaction.InputBox("Input Anal Inspection");
-            TPRExam.Text = Interaction.InputBox("Input PRExam");
-            TIleum.Text = Interaction.InputBox("Input Ileum");
-            TColon.Text = Interaction.InputBox("Input Colon");
-            TRectum.Text = Interaction.InputBox("Input Rectum");
-
-            TConclusion.Text = Interaction.InputBox("Input Conclusion");
-            TAssistant.Text = Interaction.InputBox("Input Assistant");
-            TEndoscopist.Text = Interaction.InputBox("Input Endoscopist");
-        }
         void SpeedAll()
         {
             TName.Text = Interaction.InputBox("Input Name");
@@ -120,6 +66,68 @@ namespace Reports.Forms
             cr.SetParameterValue("@Id", Id);
             cr.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.WordForWindows, path);
             Process.Start(path);
+        }
+
+        private void SpeedColon_Click(object sender, EventArgs e)
+        {
+            SpeedAll();
+            TAnalInspection.Text = Interaction.InputBox("Input Anal Inspection");
+            TPRExam.Text = Interaction.InputBox("Input PRExam");
+            TIleum.Text = Interaction.InputBox("Input Ileum");
+            TColon.Text = Interaction.InputBox("Input Colon");
+            TRectum.Text = Interaction.InputBox("Input Rectum");
+
+            TConclusion.Text = Interaction.InputBox("Input Conclusion");
+            TAssistant.Text = Interaction.InputBox("Input Assistant");
+            TEndoscopist.Text = Interaction.InputBox("Input Endoscopist");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var Colon = new Colon
+            {
+                Name = TName.Text,
+                Age = TAge.Text,
+                Gender = CGender.Text,
+                FileNo = TFileNo.Text,
+                Date = dateTimePicker1.Value,
+                Premedication = TPremedication.Text,
+                Scope = CScope.Text,
+                ReferredDoctor = TReferredDoctor.Text,
+                ClinicalData = TClinicalData.Text,
+                Preparation = CPreparation.Text,
+                AnalInspection = TAnalInspection.Text,
+                PRExam = TPRExam.Text,
+                Ileum = TIleum.Text,
+                ColonDetails = TColon.Text,
+                Rectum = TRectum.Text,
+                Conclusion = TConclusion.Text,
+                Assistant = TAssistant.Text,
+                Endoscopist = TEndoscopist.Text,
+            };
+
+            _context.Colons.Add(Colon);
+            _context.SaveChanges();
+            this.colonsTableAdapter.Fill(this.colonDataSet.Colons);
+
+
+            string myDir = "colon";
+            var path = myDir + "\\" + Colon.Id + "-" + Colon.Name + ".doc";
+
+            ReportDocument cr = new ReportDocument();
+            cr.Load("Colon.rpt");
+            cr.SetParameterValue("@Id", Colon.Id);
+            if (!System.IO.Directory.Exists(myDir))
+                System.IO.Directory.CreateDirectory(myDir);
+            cr.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.WordForWindows, path);
+            Process.Start(path);
+        }
+
+        private void ColonForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'colonDataSet.Colons' table. You can move, or remove it, as needed.
+            this.colonsTableAdapter.Fill(this.colonDataSet.Colons);
+
         }
     }
 }

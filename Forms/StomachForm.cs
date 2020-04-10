@@ -55,7 +55,7 @@ namespace Reports.Forms
             };
             _context.Stomaches.Add(Stomach);
             _context.SaveChanges();
-
+            this.stomachesTableAdapter.Fill(this.stomachDataSet.Stomaches);
             string myDir = "Stomach";
             var path = myDir + "\\" + Stomach.Id + "-" + Stomach.Name + ".doc";
 
@@ -109,6 +109,13 @@ namespace Reports.Forms
             cr.SetParameterValue("@Id", Id);
             cr.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.WordForWindows, path);
             Process.Start(path);
+        }
+
+        private void StomachForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'stomachDataSet.Stomaches' table. You can move, or remove it, as needed.
+            this.stomachesTableAdapter.Fill(this.stomachDataSet.Stomaches);
+
         }
     }
 }
