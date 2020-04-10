@@ -30,7 +30,6 @@ namespace Reports.Forms
             };
             CGender.DataSource = GenderList;
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             var Stomach = new Stomach
@@ -68,30 +67,6 @@ namespace Reports.Forms
             Process.Start(path);
         }
 
-        private void SpeedStomache_Click(object sender, EventArgs e)
-        {
-            SpeedAll();
-            TGEJ.Text = Interaction.InputBox("Input GEJ");
-            TEsophagus.Text = Interaction.InputBox("Input Esophagus");
-            TStomach.Text = Interaction.InputBox("Input Stomach");
-            TD1.Text = Interaction.InputBox("Input D1");
-            TD2.Text = Interaction.InputBox("Input D2");
-
-            TConclusion.Text = Interaction.InputBox("Input Conclusion");
-            TEndoscopist.Text = Interaction.InputBox("Input Endoscopist");
-            TAssistant.Text = Interaction.InputBox("Input Assistant");
-        }
-
-        void SpeedAll()
-        {
-            TName.Text = Interaction.InputBox("Input Name");
-            TAge.Text = Interaction.InputBox("Input Age");
-            TFileNo.Text = Interaction.InputBox("Input File No");
-            TPremedication.Text = Interaction.InputBox("Input Premedication");
-            TReferredDoctor.Text = Interaction.InputBox("Input Referred Doctor");
-            TClinicalData.Text = Interaction.InputBox("Input Clinical Data");
-        }
-
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
             var Row = dataGridView1.SelectedCells[0].RowIndex;
@@ -117,5 +92,29 @@ namespace Reports.Forms
             this.stomachesTableAdapter.Fill(this.stomachDataSet.Stomaches);
 
         }
+
+        private void SpeedStomache_Click(object sender, EventArgs e)
+        {
+            SpeedAll();
+            TGEJ.Text = Interaction.InputBox("Input GEJ");
+            TEsophagus.Text = Interaction.InputBox("Input Esophagus");
+            TStomach.Text = Interaction.InputBox("Input Stomach");
+            TD1.Text = Interaction.InputBox("Input D1");
+            TD2.Text = Interaction.InputBox("Input D2");
+
+            TConclusion.Text = Interaction.InputBox("Input Conclusion");
+            TEndoscopist.Text = Interaction.InputBox("Input Endoscopist");
+            TAssistant.Text = Interaction.InputBox("Input Assistant");
+        }
+        void SpeedAll()
+        {
+            TName.Text = Interaction.InputBox("Input Name");
+            TAge.Text = Interaction.InputBox("Input Age");
+            TFileNo.Text = Interaction.InputBox("Input File No");
+            TPremedication.Text = Interaction.InputBox("Input Premedication");
+            TReferredDoctor.Text = Interaction.InputBox("Input Referred Doctor");
+            TClinicalData.Text = Interaction.InputBox("Input Clinical Data");
+        }
+
     }
 }

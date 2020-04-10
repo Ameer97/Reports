@@ -67,9 +67,6 @@
             this.LConclusion = new System.Windows.Forms.Label();
             this.TConclusion = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.stomachDataSet = new Reports.StomachDataSet();
-            this.stomachesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stomachesTableAdapter = new Reports.StomachDataSetTableAdapters.StomachesTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,9 +85,12 @@
             this.conclusionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.assistantDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endoscopistDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stomachesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stomachDataSet = new Reports.StomachDataSet();
+            this.stomachesTableAdapter = new Reports.StomachDataSetTableAdapters.StomachesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stomachDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stomachesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stomachDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -274,6 +274,7 @@
             this.SpeedStomache.TabIndex = 143;
             this.SpeedStomache.Text = "Speed";
             this.SpeedStomache.UseVisualStyleBackColor = true;
+            this.SpeedStomache.Click += new System.EventHandler(this.SpeedStomache_Click);
             // 
             // LEsophagus
             // 
@@ -365,6 +366,7 @@
             this.button2.TabIndex = 131;
             this.button2.Text = "Insert";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // TAssistant
             // 
@@ -428,20 +430,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(634, 399);
             this.dataGridView1.TabIndex = 165;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
-            // 
-            // stomachDataSet
-            // 
-            this.stomachDataSet.DataSetName = "StomachDataSet";
-            this.stomachDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // stomachesBindingSource
-            // 
-            this.stomachesBindingSource.DataMember = "Stomaches";
-            this.stomachesBindingSource.DataSource = this.stomachDataSet;
-            // 
-            // stomachesTableAdapter
-            // 
-            this.stomachesTableAdapter.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -552,6 +540,20 @@
             this.endoscopistDataGridViewTextBoxColumn.HeaderText = "Endoscopist";
             this.endoscopistDataGridViewTextBoxColumn.Name = "endoscopistDataGridViewTextBoxColumn";
             // 
+            // stomachesBindingSource
+            // 
+            this.stomachesBindingSource.DataMember = "Stomaches";
+            this.stomachesBindingSource.DataSource = this.stomachDataSet;
+            // 
+            // stomachDataSet
+            // 
+            this.stomachDataSet.DataSetName = "StomachDataSet";
+            this.stomachDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // stomachesTableAdapter
+            // 
+            this.stomachesTableAdapter.ClearBeforeFill = true;
+            // 
             // StomachForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -599,8 +601,8 @@
             this.Text = "StomachForm";
             this.Load += new System.EventHandler(this.StomachForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stomachDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stomachesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stomachDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
