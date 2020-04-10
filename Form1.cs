@@ -24,8 +24,8 @@ namespace Reports
             var Row = dataGridView1.SelectedCells[0].RowIndex;
             var Id = dataGridView1.Rows[Row].Cells[0].Value;
             var Name = dataGridView1.Rows[Row].Cells[1].Value;
-            string myDir = "colon";
             //var path = @"colon\" + Id + "-" + Name + "-" + DateTime.Now.Hour + "-" + DateTime.Now.Minute + "-" + DateTime.Now.Second + ".doc";
+            string myDir = "colon";
             var path = myDir + "\\" + Id + "-" + Name + ".doc";
             if(System.IO.File.Exists(path))
                 Process.Start(path);
@@ -33,7 +33,7 @@ namespace Reports
             else
             {
                 ReportDocument cr = new ReportDocument();
-                cr.Load("CrystalReport3.rpt");
+                cr.Load("Colon.rpt");
                 cr.SetParameterValue("@Id", Id);
                 if (!System.IO.Directory.Exists(myDir))
                     System.IO.Directory.CreateDirectory(myDir);
